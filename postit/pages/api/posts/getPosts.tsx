@@ -12,6 +12,7 @@ export default async function handler(
 ) {
   if(req.method === "GET") {
  
+    
   //Fetch all posts
   try {
     const data = await prisma.post.findMany({
