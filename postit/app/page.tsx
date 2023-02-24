@@ -22,7 +22,7 @@ export default function Home() {
     <main>
      {data?.map((post) => (
       <Post 
-      comments={post.comments}
+      comments={post.Comment}
       key={post.id} 
       name={post.user.name} 
       avatar={post.user.image} 
