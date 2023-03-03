@@ -1,12 +1,15 @@
 import Movie from "./Movie"
 
 export default async function About() {
-    const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=d5c35e51c81488b19da7c1f572507a3d`)
+    const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=d5c35e51c81488b19da7c1f572507a3d`,{
+        next: {revalidate: 0}
+    })
+   
    const res = await data.json()
 
     return(
-        <div>
-            <h1 className="text-3xl font-bold underline">About page.</h1>
+     <main>
+         <div className="grid gap-16 grid-cols-fluid">
           {res.results.map((movie) => (
           <Movie
            key={movie.id}
@@ -17,5 +20,8 @@ export default async function About() {
           />
           ))}
         </div>
+        </main>
     )
+
+
 } 

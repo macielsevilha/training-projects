@@ -1,8 +1,9 @@
+import About from "./about/page";
 
 export default function Home() {
   return (
     <main>
-     <h1>Hello next13 beta.</h1>
+     <About />
     </main>
   )
 }
